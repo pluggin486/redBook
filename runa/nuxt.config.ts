@@ -1,5 +1,7 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-  devtools: { enabled: true }
-})
+  routeRules: {
+    // Установите prerender в true, чтобы настроить предварительный рендеринг.
+    "/rss.xml": { prerender: true },
+    "/this-DOES-NOT-get-prerendered": { prerender: false },
+  },
+});
